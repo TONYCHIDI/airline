@@ -19,7 +19,7 @@ class Flight(models.Model):
         return f"{self.id}: {self.Origin} to {self.Destination} @ {self.Duration}"
     
     def is_valid_flight(self):
-        return self.Origin != self.Destination or self.Duration > 0
+        return self.Origin != self.Destination or self.Duration >= 1
     
     
 class People(models.Model):
