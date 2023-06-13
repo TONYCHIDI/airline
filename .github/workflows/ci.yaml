@@ -4,16 +4,14 @@ on: push
 jobs:
     test_project:
         runs-on: ubuntu-latest
-
         steps:
         - uses: actions/checkout@v3
         - name: Run Django unit tests
-        uses: actions/setup-python@v3
         - name: Install Dependencies
-        run: |
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
+            run: |
+                python -m pip install --upgrade pip
+                pip install -r requirements.txt
         - name: Run Django Unit Tests
-        run: |
-            pip3 install --user django
-            python3 manage.py test
+            run: |
+                pip3 install --user django
+                python3 manage.py test
